@@ -44,7 +44,6 @@ private String gravite;
 @NotBlank(message = "type obligatoire")
 @Column(nullable = false)
 private String type;
-@NotNull(message = "debut de maladie obligatoire!")
 @PastOrPresent
 private Date debut;
 
