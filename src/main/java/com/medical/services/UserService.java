@@ -13,6 +13,6 @@ public Optional<User> getOneUser(long id);
 public User addOneUser(User user);
 public void DeleteOneUser(long id);
 public User AssignProfileToUser(Long userId,Profile profile);
-public User updateProfile(Profile profile,long userId );
+public Profile updateProfile(Profile profile,long userId );
 
 }
