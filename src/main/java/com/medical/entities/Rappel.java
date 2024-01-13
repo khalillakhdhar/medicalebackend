@@ -35,7 +35,7 @@ private String titre;
 @Temporal(TemporalType.TIME)
 private Date heure;
 
-@ManyToOne(fetch = FetchType.LAZY)
+@ManyToOne(fetch = FetchType.EAGER)
 @JsonIgnoreProperties("rappels")
 @JoinColumn(name = "medicament_id")
 private Medicament medicament;

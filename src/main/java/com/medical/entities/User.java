@@ -53,10 +53,10 @@ private String email;
 private String password;
 @Min(value = 16)
 private int age;
-@OneToOne(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+@OneToOne(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 @JsonIgnoreProperties("user")
 private  Profile profile;
-@OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+@OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 @JsonIgnoreProperties("user")
 private List<Maladie> maladies;
 @Enumerated(EnumType.STRING)

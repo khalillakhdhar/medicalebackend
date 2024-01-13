@@ -42,11 +42,11 @@ private Date debut;
 @Temporal(TemporalType.DATE)
 
 private Date fin;
-@ManyToOne(fetch = FetchType.LAZY)
+@ManyToOne(fetch = FetchType.EAGER)
 @JoinColumn(name = "maladie_id")
 @JsonIgnoreProperties("maldies")
 private Maladie maladie;
-@OneToMany(fetch = FetchType.LAZY,mappedBy = "medicament",cascade = CascadeType.ALL)
+@OneToMany(fetch = FetchType.EAGER,mappedBy = "medicament",cascade = CascadeType.ALL)
 @JsonIgnoreProperties("medicament")
 private List<Rappel> rappels;
 

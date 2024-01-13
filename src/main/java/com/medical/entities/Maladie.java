@@ -51,10 +51,9 @@ private Date debut;
 
 
 private Date fin;
-@ManyToOne(fetch = FetchType.LAZY)
+@ManyToOne(fetch = FetchType.EAGER)
 @JoinColumn(name = "user_id")
-@JsonIgnoreProperties("maldies")
-@JsonIgnore
+@JsonIgnoreProperties("maladies")
 private User user;
 @OneToMany(mappedBy = "maladie",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 @JsonIgnoreProperties("maladie")

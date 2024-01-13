@@ -1,5 +1,6 @@
 package com.medical.controllers;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import jakarta.validation.Valid;
 public class UserController {
 	@Autowired
 	UserService userService;
+
 	@GetMapping
 	public ResponseEntity<List<User>> getAllUsers()
 	{
