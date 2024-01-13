@@ -1,5 +1,7 @@
 package com.medical.entities;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
@@ -24,7 +26,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @JsonIgnoreProperties({"hibernateLazyInitialiser","handler"})
-public class Profile {
+public class Profile  implements Serializable{
 	@Id
 private long id;
 	@NotBlank(message = "la photo ne peut pas être vide")

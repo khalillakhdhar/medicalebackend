@@ -1,5 +1,6 @@
 package com.medical.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -28,7 +29,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @JsonIgnoreProperties({"hibernateLazyInitialiser","handler"})
-public class Rappel extends AuditModel {
+public class Rappel extends AuditModel  implements Serializable{
 @NotBlank
 private String titre;
 @Temporal(TemporalType.TIME)

@@ -1,5 +1,6 @@
 package com.medical.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -30,7 +31,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @JsonIgnoreProperties({"hibernateLazyInitialiser","handler"})
-public class Medicament extends AuditModel {
+public class Medicament extends AuditModel implements Serializable {
 @NotBlank(message = "le titre ne peut pas être vide")
 private String titre;
 @Column(length = 255)

@@ -1,8 +1,10 @@
 package com.medical.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
@@ -31,7 +33,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @JsonIgnoreProperties({"hibernateLazyInitialiser","handler"})
-public class Maladie extends AuditModel{
+public class Maladie extends AuditModel implements Serializable{
 @NotBlank(message = "titre obligatoire")
 @Column(nullable = false)
 private String titre;
@@ -52,6 +54,7 @@ private Date fin;
 @ManyToOne(fetch = FetchType.LAZY)
 @JoinColumn(name = "user_id")
 @JsonIgnoreProperties("maldies")
+@JsonIgnore
 private User user;
 @OneToMany(mappedBy = "maladie",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 @JsonIgnoreProperties("maladie")

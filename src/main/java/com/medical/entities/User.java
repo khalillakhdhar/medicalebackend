@@ -1,5 +1,6 @@
 package com.medical.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -33,7 +34,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @JsonIgnoreProperties({"hibernateLazyInitialiser","handler"})
-public class User extends AuditModel {
+public class User extends AuditModel implements Serializable {
 @Size(min = 2, max = 30)
 @Column(nullable = false)
 @NotBlank(message = "le nom ne peut pas être vide")
